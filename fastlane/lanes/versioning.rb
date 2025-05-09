@@ -67,3 +67,20 @@ lane :identify_branch do |options|
     release_branch: release_branch
   }
 end
+
+lane :run_build do |options|
+  branch_name = options.fetch(:gh_branch_name, "")
+  if branch_name.empty?
+    UI.abort_with_message! "branch name cannot be empty"
+  end
+
+  identified_branches = identify_branch
+
+  if branch_name == identified_branches[:prerelease_branch]
+    UI.important "Running prerelease build"
+  elsif branch_name == identified_branches[:release_branch]
+    UI.important "Running release build"
+  else
+    UI.abort_with_message! "Aborting; unable to determine lane to run"
+  end
+end

@@ -1,0 +1,21 @@
+name: Make Build
+
+on:
+  push:
+    branches:
+      - "releases/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-all-tests:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run all tests on iOS
+        run: |
+          bundle install
+          bundle exec fastlane run_build gh_branch_name:${{ github.ref_name }}
+
