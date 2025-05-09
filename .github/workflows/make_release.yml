@@ -5,14 +5,9 @@ on:
 
 jobs:
   make_release:
-    runs-on: ubuntu-latest
+    runs-on: macos-15 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3.8'
-          bundler-cache: true
       - name: Make Release
         run: |
           bundle install
