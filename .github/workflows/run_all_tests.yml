@@ -12,13 +12,13 @@ on:
 
 jobs:
   run-all-tests:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v1
       - name: List Xcode Versions
         run: ls /Applications | grep Xcode
       - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app
+        run: sudo xcode-select -switch /Applications/Xcode_16.3.app
       - name: List all simulators
         run: xcrun simctl list
       - name: Run all tests on iOS
