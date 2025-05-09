@@ -23,6 +23,38 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
+### ios make_branch_name
+
+```sh
+[bundle exec] fastlane ios make_branch_name
+```
+
+
+
+### ios get_semantic_version
+
+```sh
+[bundle exec] fastlane ios get_semantic_version
+```
+
+
+
+### ios make_release
+
+```sh
+[bundle exec] fastlane ios make_release
+```
+
+
+
+### ios identify_branch
+
+```sh
+[bundle exec] fastlane ios identify_branch
+```
+
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
