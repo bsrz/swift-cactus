@@ -1,0 +1,21 @@
+name: Make Release Branch
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  make-release-branch:
+    runs-on: macos-15 
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.CACTUS_GH_WORKFLOW_PAT }}
+      - name: Make Release Branch
+        run: |
+          bundle install
+          bundle exec fastlane make_release_branch

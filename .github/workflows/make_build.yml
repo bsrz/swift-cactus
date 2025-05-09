@@ -1,0 +1,22 @@
+name: Make Build
+
+on:
+  push:
+    branches:
+      - "release/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  make-build:
+    runs-on: macos-15
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Making Build 
+        run: |
+          bundle install
+          bundle exec fastlane run_build gh_branch_name:${{ github.ref_name }}
+
