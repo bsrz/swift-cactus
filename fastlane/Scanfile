@@ -1,5 +1,4 @@
 clean true
-destination 'name=iPhone 16 Pro Max,OS=18.4'
+destination 'name=iPhone 16 Pro Max,OS=18.2'
 devices ['iPhone 16 Pro Max']
-output_types 'junit'
 prelaunch_simulator true
