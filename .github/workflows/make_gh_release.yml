@@ -7,7 +7,10 @@ jobs:
   deploy:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - name: Code Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.CACTUS_GH_WORKFLOW_PAT }}
       - name: Making GitHub Release
         run: |
           bundle install
