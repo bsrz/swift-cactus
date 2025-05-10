@@ -10,7 +10,7 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v4
         with:
-          fetch_tags: true
+          fetch-depth: 0
           token: ${{ secrets.CACTUS_GH_WORKFLOW_PAT }}
       - name: Making GitHub Release
         run: |
