@@ -68,6 +68,10 @@ lane :identify_branch do |options|
   }
 end
 
+lane :minor_bump do |options|
+  increment_version_number(bump_type: 'minor')
+end
+
 lane :run_build do |options|
   branch_name = options.fetch(:gh_branch_name, "")
   if branch_name.empty?
