@@ -13,6 +13,7 @@ platform :ios do
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Lanes
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  import 'lanes/gh.rb'
   import 'lanes/testing.rb'
   import 'lanes/versioning.rb'
 end
