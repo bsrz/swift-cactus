@@ -63,6 +63,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
+### ios minor_bump
+
+```sh
+[bundle exec] fastlane ios minor_bump
+```
+
+
+
 ### ios run_build
 
 ```sh
