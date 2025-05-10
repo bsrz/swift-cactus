@@ -27,7 +27,7 @@ lane :make_branch_name do |options|
 end
 
 lane :get_semantic_version do
-  Dir.chdir(ENV['PWD']) { `agvtool mvers -terse1` }
+  Dir.chdir(ENV['PWD']) { `agvtool mvers -terse1`.strip }
 end
 
 lane :make_release_branch do |options|
