@@ -15,6 +15,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
+### ios make_gh_release
+
+```sh
+[bundle exec] fastlane ios make_gh_release
+```
+
+
+
 ### ios run_all_tests
 
 ```sh
@@ -39,10 +47,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
-### ios make_release
+### ios make_release_branch
 
 ```sh
-[bundle exec] fastlane ios make_release
+[bundle exec] fastlane ios make_release_branch
 ```
 
 

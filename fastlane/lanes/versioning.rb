@@ -30,7 +30,7 @@ lane :get_semantic_version do
   Dir.chdir(ENV['PWD']) { `agvtool mvers -terse1` }
 end
 
-lane :make_release do |options|
+lane :make_release_branch do |options|
   semver = get_semantic_version
   branch_name = make_branch_name(semver: semver)
 

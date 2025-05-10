@@ -14,4 +14,4 @@ jobs:
       - name: Make Release
         run: |
           bundle install
-          bundle exec fastlane make_release
+          bundle exec fastlane make_release_branch
