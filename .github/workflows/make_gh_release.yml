@@ -1,0 +1,14 @@
+name: Make GitHub Release 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Making GitHub Release
+        run: |
+          bundle install
+          bundle exec fastlane make_gh_release gh_token:${{ secrets.CACTUS_GH_WORKFLOW_PAT }}
