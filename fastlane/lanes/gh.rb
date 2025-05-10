@@ -11,6 +11,7 @@ lane :make_gh_release do |options|
   components[2] = 'x'
   branch_name = "release/#{components.join('.')}"
   tag_name = "#{semver}"
+
   sh "git tag #{tag_name}"
   sh "git push origin #{tag_name}"
 
@@ -31,12 +32,10 @@ lane :make_gh_release do |options|
     http.request(request)
   end
 
-  UI.message("GitHub Release API Response: #{response.body}")
-
   case response
   when Net::HTTPSuccess
-    UI.success("GitHub release created successfully with auto-generated notes!")
+    UI.success "GitHub release created successfully!"
   else
-    UI.error("Failed to create GitHub release: #{response.body}")
+    UI.abort_with_message! "Failed to create GitHub release: #{response.body}"
   end
 end
