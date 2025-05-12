@@ -5,6 +5,7 @@
 ## 0.3.0
 
 - adding more changelog here content here
+- more after rebasing on the previous changelog
 
 ## 0.2.0
 
