@@ -2,6 +2,10 @@
 
 # Changelog
 
+## 0.4.0
+
+- adding content of PR 2
+
 ## 0.3.0
 
 - adding more changelog here content here
